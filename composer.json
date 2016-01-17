@@ -1,0 +1,25 @@
+{
+    "name": "spicimedved/validator",
+    "description": "Example of symfony validator component",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Petr Jasa",
+            "email": "spicimedved@gmail.com"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+
+    "require": {
+        "symfony/validator": "^3.0",
+        "symfony/yaml": "^3.0",
+        "symfony/config": "^3.0",
+        "doctrine/annotations": "^1.2",
+        "doctrine/cache": "^1.6"
+    }
+}

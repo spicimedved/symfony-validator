@@ -1,0 +1,32 @@
+App\Entity\Article:
+    properties:
+        title:
+            - NotBlank: {message: 'Title should not be empty'}
+
+App\Entity\Person:
+    group_sequence:
+        - Person
+        - Strict
+
+    properties:
+        name:
+            - NotBlank: ~
+
+        card:
+            - NotBlank: ~
+            - CardScheme: {schemes: ["MASTERCARD", "VISA"]}
+
+        email:
+            - NotBlank: ~
+            - Email: ~
+
+        password:
+            - NotBlank: ~
+            - Length: {min: 8}
+
+    getters:
+        passwordLegal:
+            - 'IsTrue': {message: 'The password cannot match your name'}
+
+    constraints:
+        - Callback: {callback: [App\Entity\Person, validate]}
